@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TextileMangementSystemModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MangementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Buyers" EntityType="TextileMangementSystemModel.Buyer" />
+    <EntitySet Name="Demands" EntityType="TextileMangementSystemModel.Demand" />
+    <EntitySet Name="Dyings" EntityType="TextileMangementSystemModel.Dying" />
+    <EntitySet Name="Knittings" EntityType="TextileMangementSystemModel.Knitting" />
+    <EntitySet Name="Meetings" EntityType="TextileMangementSystemModel.Meeting" />
+    <EntitySet Name="Merchandisers" EntityType="TextileMangementSystemModel.Merchandiser" />
+    <EntitySet Name="Orders" EntityType="TextileMangementSystemModel.Order" />
+    <EntitySet Name="sysdiagrams" EntityType="TextileMangementSystemModel.sysdiagram" />
+    <EntitySet Name="Yarns" EntityType="TextileMangementSystemModel.Yarn" />
+    <AssociationSet Name="FK_Order_Buyer" Association="TextileMangementSystemModel.FK_Order_Buyer">
+      <End Role="Buyer" EntitySet="Buyers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Demand_Merchandiser" Association="TextileMangementSystemModel.FK_Demand_Merchandiser">
+      <End Role="Merchandiser" EntitySet="Merchandisers" />
+      <End Role="Demand" EntitySet="Demands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Demand_Order" Association="TextileMangementSystemModel.FK_Demand_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Demand" EntitySet="Demands" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dying_Demand" Association="TextileMangementSystemModel.FK_Dying_Demand">
+      <End Role="Demand" EntitySet="Demands" />
+      <End Role="Dying" EntitySet="Dyings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Knitting_Demand" Association="TextileMangementSystemModel.FK_Knitting_Demand">
+      <End Role="Demand" EntitySet="Demands" />
+      <End Role="Knitting" EntitySet="Knittings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yarn_Demand" Association="TextileMangementSystemModel.FK_Yarn_Demand">
+      <End Role="Demand" EntitySet="Demands" />
+      <End Role="Yarn" EntitySet="Yarns" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Meeting_Order" Association="TextileMangementSystemModel.FK_Meeting_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Meeting" EntitySet="Meetings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Buyer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ComName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Valid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="TextileMangementSystemModel.FK_Order_Buyer" FromRole="Buyer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Demand">
+    <Key>
+      <PropertyRef Name="No" />
+    </Key>
+    <Property Name="No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Thickness" Type="Double" Nullable="false" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Quantity" Type="Double" Nullable="false" />
+    <Property Name="Size" Type="Double" Nullable="false" />
+    <Property Name="OrderNo" Type="Int32" Nullable="false" />
+    <Property Name="MerchID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Merchandiser" Relationship="TextileMangementSystemModel.FK_Demand_Merchandiser" FromRole="Demand" ToRole="Merchandiser" />
+    <NavigationProperty Name="Order" Relationship="TextileMangementSystemModel.FK_Demand_Order" FromRole="Demand" ToRole="Order" />
+    <NavigationProperty Name="Dying" Relationship="TextileMangementSystemModel.FK_Dying_Demand" FromRole="Demand" ToRole="Dying" />
+    <NavigationProperty Name="Knitting" Relationship="TextileMangementSystemModel.FK_Knitting_Demand" FromRole="Demand" ToRole="Knitting" />
+    <NavigationProperty Name="Yarn" Relationship="TextileMangementSystemModel.FK_Yarn_Demand" FromRole="Demand" ToRole="Yarn" />
+  </EntityType>
+  <EntityType Name="Dying">
+    <Key>
+      <PropertyRef Name="DemandNo" />
+    </Key>
+    <Property Name="DemandNo" Type="Int32" Nullable="false" />
+    <Property Name="CMC_Decision" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CMC_DE" Type="Double" Nullable="false" />
+    <Property Name="DL" Type="Double" Nullable="false" />
+    <Property Name="DA" Type="Double" Nullable="false" />
+    <Property Name="DB" Type="Double" Nullable="false" />
+    <Property Name="DC" Type="Double" Nullable="false" />
+    <Property Name="DH" Type="Double" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Demand" Relationship="TextileMangementSystemModel.FK_Dying_Demand" FromRole="Dying" ToRole="Demand" />
+  </EntityType>
+  <EntityType Name="Knitting">
+    <Key>
+      <PropertyRef Name="DemandNo" />
+    </Key>
+    <Property Name="DemandNo" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Double" Nullable="false" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Shade" Type="Double" Nullable="false" />
+    <Property Name="Width" Type="Double" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Hole" Type="Int32" Nullable="false" />
+    <Property Name="TotalPoitn" Type="Double" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Demand" Relationship="TextileMangementSystemModel.FK_Knitting_Demand" FromRole="Knitting" ToRole="Demand" />
+  </EntityType>
+  <EntityType Name="Meeting">
+    <Key>
+      <PropertyRef Name="OrderNo" />
+    </Key>
+    <Property Name="OrderNo" Type="Int32" Nullable="false" />
+    <Property Name="Contact" Type="Int32" Nullable="false" />
+    <Property Name="Details" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="TextileMangementSystemModel.FK_Meeting_Order" FromRole="Meeting" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Merchandiser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Pass" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Demands" Relationship="TextileMangementSystemModel.FK_Demand_Merchandiser" FromRole="Merchandiser" ToRole="Demand" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="No" />
+    </Key>
+    <Property Name="No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Size" Type="Double" Nullable="false" />
+    <Property Name="Amount" Type="Double" Nullable="false" />
+    <Property Name="Dia" Type="Double" Nullable="false" />
+    <Property Name="Shade" Type="Double" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="BuyerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Buyer" Relationship="TextileMangementSystemModel.FK_Order_Buyer" FromRole="Order" ToRole="Buyer" />
+    <NavigationProperty Name="Demands" Relationship="TextileMangementSystemModel.FK_Demand_Order" FromRole="Order" ToRole="Demand" />
+    <NavigationProperty Name="Meeting" Relationship="TextileMangementSystemModel.FK_Meeting_Order" FromRole="Order" ToRole="Meeting" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Yarn">
+    <Key>
+      <PropertyRef Name="DemandNo" />
+    </Key>
+    <Property Name="DemandNo" Type="Int32" Nullable="false" />
+    <Property Name="M_C_Dia" Type="Int32" Nullable="false" />
+    <Property Name="F_Gsum" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Double" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Test" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Demand" Relationship="TextileMangementSystemModel.FK_Yarn_Demand" FromRole="Yarn" ToRole="Demand" />
+  </EntityType>
+  <Association Name="FK_Order_Buyer">
+    <End Role="Buyer" Type="TextileMangementSystemModel.Buyer" Multiplicity="1" />
+    <End Role="Order" Type="TextileMangementSystemModel.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buyer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="BuyerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Demand_Merchandiser">
+    <End Role="Merchandiser" Type="TextileMangementSystemModel.Merchandiser" Multiplicity="1" />
+    <End Role="Demand" Type="TextileMangementSystemModel.Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Merchandiser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Demand">
+        <PropertyRef Name="MerchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Demand_Order">
+    <End Role="Order" Type="TextileMangementSystemModel.Order" Multiplicity="1" />
+    <End Role="Demand" Type="TextileMangementSystemModel.Demand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="No" />
+      </Principal>
+      <Dependent Role="Demand">
+        <PropertyRef Name="OrderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dying_Demand">
+    <End Role="Demand" Type="TextileMangementSystemModel.Demand" Multiplicity="1" />
+    <End Role="Dying" Type="TextileMangementSystemModel.Dying" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Demand">
+        <PropertyRef Name="No" />
+      </Principal>
+      <Dependent Role="Dying">
+        <PropertyRef Name="DemandNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Knitting_Demand">
+    <End Role="Demand" Type="TextileMangementSystemModel.Demand" Multiplicity="1" />
+    <End Role="Knitting" Type="TextileMangementSystemModel.Knitting" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Demand">
+        <PropertyRef Name="No" />
+      </Principal>
+      <Dependent Role="Knitting">
+        <PropertyRef Name="DemandNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yarn_Demand">
+    <End Role="Demand" Type="TextileMangementSystemModel.Demand" Multiplicity="1" />
+    <End Role="Yarn" Type="TextileMangementSystemModel.Yarn" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Demand">
+        <PropertyRef Name="No" />
+      </Principal>
+      <Dependent Role="Yarn">
+        <PropertyRef Name="DemandNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Meeting_Order">
+    <End Role="Order" Type="TextileMangementSystemModel.Order" Multiplicity="1" />
+    <End Role="Meeting" Type="TextileMangementSystemModel.Meeting" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="No" />
+      </Principal>
+      <Dependent Role="Meeting">
+        <PropertyRef Name="OrderNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

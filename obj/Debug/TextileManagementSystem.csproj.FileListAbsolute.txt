@@ -1,0 +1,22 @@
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\TextileManagementSystem.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\TextileManagementSystem.pdb
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\obj\Debug\ResolveAssemblyReference.cache
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\obj\Debug\TextileManagementSystem.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\obj\Debug\TextileManagementSystem.pdb
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+H:\Programming\MVC 2\TextileManagementSystem\TextileManagementSystem\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+E:\desk\dictionary\TextileManagementSystem\TextileManagementSystem\TextileManagementSystem\bin\TextileManagementSystem.dll
+E:\desk\dictionary\TextileManagementSystem\TextileManagementSystem\TextileManagementSystem\bin\TextileManagementSystem.pdb
+E:\desk\dictionary\TextileManagementSystem\TextileManagementSystem\TextileManagementSystem\obj\Debug\TextileManagementSystem.csprojResolveAssemblyReference.cache
+E:\desk\dictionary\TextileManagementSystem\TextileManagementSystem\TextileManagementSystem\obj\Debug\TextileManagementSystem.dll
+E:\desk\dictionary\TextileManagementSystem\TextileManagementSystem\TextileManagementSystem\obj\Debug\TextileManagementSystem.pdb

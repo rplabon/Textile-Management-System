@@ -1,0 +1,224 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="#" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="#" />
+    <link rel="pingback" href="#" />
+
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div>
+            <!-- page wrappers (100% width) -->
+            <div id="page-wrap1">
+                <div id="page-wrap2">
+                    <!-- page (actual site content, custom width) -->
+                    <div id="page" class="with-sidebar">
+                        <!-- main wrapper (side & main) -->
+                        <div id="main-wrap">
+                            <!-- mid column wrap -->
+                            <div id="mid-wrap">
+                                <!-- sidebar wrap -->
+                                <div id="side-wrap">
+                                    <!-- mid column -->
+                                    <div id="mid">
+                                        <!-- header -->
+                                        <div id="header">
+                                            <div id="topnav">
+                                                <p>
+                                                    <a href="#"><%: Html.ActionLink("Home", "Index", "Home")%></a> | <a href="#">About</a></p>
+                                            </div>
+                                            <a id="logo" href="#">
+                                                <img src="/../../content/images/logo.png" alt="Textile Managment System" /></a>
+                                            <!-- top tab navigation -->
+                                            <div id="tabs">
+                                                <ul>
+                                                    <li><a href="#" class="active"><span><span>Published news</span></span></a></li>
+                                                    <li><a href="#"><span><span>Upcoming news</span></span></a></li>
+                                                    <li><a href="#"><span><span>Submit a post</span></span></a></li>
+                                                </ul>
+                                            </div>
+                                            <!-- /top tabs -->
+                                        </div>
+                                        <!-- /header -->
+                                        <!-- mid content -->
+                                        <div id="mid-content">
+
+
+                                            <!-- sort links -->
+                                            <div id="sortlinks">
+                                                
+                                                <div id="logindisplay">
+                                                <% Html.RenderPartial("LogOnUserControl"); %>
+                                                </div> 
+                                                
+                                            </div>
+                                            <!-- /sort links -->
+
+
+
+                                            <!-- post -->
+                                            <div class="post">
+                                            
+                                            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+                                            </asp:ContentPlaceHolder>
+
+
+                                           </div>
+                                            <!-- /post -->
+
+
+                                            <!-- post -->
+                                            <div class="post">
+                                                <asp:ContentPlaceHolder ID="DetailsContent" runat="server">
+                                                </asp:ContentPlaceHolder>
+                                            </div>
+                                            <!-- /post -->
+
+
+                                            <!-- secondary tabs menu -->
+                                            <div id="secondary-tabs">
+                                                <ul class="menu">
+                                                    <li><a href="#tab-1"><span><span>Commentsss</span></span></a></li>
+                                                    <li><a href="#tab-2"><span><span>Who voted</span></span></a></li>
+                                                    <li><a href="#tab-3"><span><span>Related Links</span></span></a></li>
+                                                </ul>
+                                                <!-- tab1 -->
+                                                <div id="tab-1">
+                                                    <!-- comments -->
+                                                    <ol id="comments">
+                                                        <!-- comment block -->
+                                                        <li class="comment with-avatars">
+                                                            <div class="wrap tiptrigger">
+                                                                <div class="avatar">
+                                                                    <a class="gravatar">
+                                                                        <img src="/../../Content/images/avatar.jpg" alt="default avatar" /></a>
+                                                                </div>
+                                                                <div class="details regularcomment">
+                                                                    <p class="head">
+                                                                        <span class="info"><a href="#">#1</a> by Plabon - 30th April 2011</span><span
+                                                                            class="rate"> <a class="karma negative">-14</a> <a href="#" class="ratelink up">&nbsp;</a>
+                                                                            <a href="#" class="ratelink down">&nbsp;</a></span></p>
+                                                                    <!-- comment contents -->
+                                                                    <div class="text">
+                                                                        <div id="commentbody">
+                                                                            <p>
+                                                                                Implementing merchandising of textile company is a good job for industrial devlopment</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- /comment contents -->
+                                                                </div>
+                                                                <div class="act tip">
+                                                                    <span class="button reply"><a href="#"><span><span>Replyspan> <span class="button quote">
+                                                                        <a href="#"><span><span>Quote</span></span></a></span></span></span></a></span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <!-- /comment block -->
+                                                    </ol>
+                                                    <!-- /comments -->
+                                                </div>
+                                                <!-- /tab1 -->
+                                                <!-- tab2 -->
+                                                <div id="tab-2">
+                                                    <p>
+                                                        2nd tab</p>
+                                                </div>
+                                                <!-- /tab2 -->
+                                                <!-- tab3 -->
+                                                <div id="tab-3">
+                                                    <p>
+                                                        3rd tab</p>
+                                                </div>
+                                                <!-- /tab3 -->
+                                            </div>
+                                            <!-- /secondary tabs menu -->
+                                        </div>
+                                        <!-- /mid content -->
+                                    </div>
+                                    <!-- /mid -->
+                                    <!-- sidebar -->
+                                    <div id="sidebar">
+                                        <!-- sidebar 1st container -->
+                                        <div id="sidebar-wrap1">
+                                            <!-- sidebar 2nd container -->
+                                            <div id="sidebar-wrap2">
+                                                <ul id="sidelist">
+                                                    <li>
+                                                        <!-- search form -->
+                                                        <div id="searchtab">
+                                                            <div class="inside">
+                                                                <form action="#" method="get" id="thisform-search">
+                                                                <fieldset>
+                                                                    <input type="text" size="16" class="searchfield" id="searchsite" value="Search website..."
+                                                                        onfocus="if(this.value == 'Search website...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search website...';}" />
+                                                                    <input type="submit" value="Go" class="searchbutton" />
+                                                                </fieldset>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /search form -->
+                                                    </li>
+                                                    <li>
+                                                        <!-- sidebar menu (categories) -->
+                                                        <ul class="nav">
+                                                            <li class="cat-item"><a href="#" class="active"><span>All</span></a><a class="rss tip"
+                                                                href="#"></a> </li>
+                                                            <li class="cat-item"><a href="#" class="active"><span>Depertments</span></a><a class="rss tip"
+                                                                href="#"></a>
+                                                                <ul>
+                                                                    <li class="cat-item"><a href="#"><span>Dying</span></a><a class="rss tip" href="#"></a>
+                                                                    </li>
+                                                                    <li class="cat-item"><a href="#"><span>Yarn</span></a><a class="rss tip" href="#"></a>
+                                                                    </li>
+                                                                    <li class="cat-item"><a href="#"><span>Knitting</span></a><a class="rss tip" href="#"></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- /sidebar menu -->
+
+
+
+                                                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                                        </asp:ContentPlaceHolder>
+
+
+
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- /sidebar 2nd container -->
+                                        </div>
+                                        <!-- /sidebar 1st container -->
+                                    </div>
+                                    <!-- /sidebar -->
+                                </div>
+                                <!-- /side wrap -->
+                            </div>
+                            <!-- /mid column wrap -->
+                        </div>
+                        <!-- /main wrapper -->
+                        <!-- clear main & sidebar sections -->
+                        <div class="clearcontent">
+                        </div>
+                        <!-- /clear main & sidebar sections -->
+                        <!-- footer -->
+                        <div id="footer" class="green">
+                            <!-- please do not remove this. respect the authors :) -->
+                            © Copyright protected by Kh. Rabiul Hasan</div>
+                        <!-- /footer -->
+                        </div>
+                    <!-- /page -->
+                </div>
+            </div>
+        
+    </div>
+</body>
+</html>

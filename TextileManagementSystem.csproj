@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AE7C6782-CCF3-4D5A-9D1A-569EE2E33F97}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextileManagementSystem</RootNamespace>
+    <AssemblyName>TextileManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Backup\log.txt" />
+    <Compile Include="Controllers\BuyerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\MerchController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\TestDemandController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BuyerRepository.cs" />
+    <Compile Include="Models\DemandRepository.cs" />
+    <Compile Include="Models\DyingRepository.cs" />
+    <Compile Include="Models\KnittingRepository.cs" />
+    <Compile Include="Controllers\Log.cs" />
+    <Compile Include="Models\MeetingRepository.cs" />
+    <Compile Include="Models\MerchandiserRepository.cs" />
+    <Compile Include="Models\OrderRepository.cs" />
+    <Compile Include="Models\TextileManagementSystem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TextileManagementSystem.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\YarnRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\TextileMangementSystem.mdf" />
+    <Content Include="App_Data\TextileMangementSystem_log.ldf">
+      <DependentUpon>TextileMangementSystem.mdf</DependentUpon>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\images\avatar.jpg" />
+    <Content Include="Content\images\b1.png" />
+    <Content Include="Content\images\b3.gif" />
+    <Content Include="Content\images\blank.gif" />
+    <Content Include="Content\images\blockquote.png" />
+    <Content Include="Content\images\button-bg.png" />
+    <Content Include="Content\images\button-quote.png" />
+    <Content Include="Content\images\button-reply.png" />
+    <Content Include="Content\images\button-submit.png" />
+    <Content Include="Content\images\comment-bg-admin.png" />
+    <Content Include="Content\images\comment-bg.png" />
+    <Content Include="Content\images\comment-div-bg.png" />
+    <Content Include="Content\images\comment-div-start.png" />
+    <Content Include="Content\images\div-h.gif" />
+    <Content Include="Content\images\div-h2.gif" />
+    <Content Include="Content\images\edit.png" />
+    <Content Include="Content\images\header-bg.jpg" />
+    <Content Include="Content\images\header-center.jpg" />
+    <Content Include="Content\images\input-bg.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\main-bg.gif" />
+    <Content Include="Content\images\mtab-bg.png" />
+    <Content Include="Content\images\mtab-left.png" />
+    <Content Include="Content\images\mtab-right.png" />
+    <Content Include="Content\images\pagecontrols.png" />
+    <Content Include="Content\images\post-icons.png" />
+    <Content Include="Content\images\postinfo-bg-admin.gif" />
+    <Content Include="Content\images\postinfo-bg.gif" />
+    <Content Include="Content\images\rss.png" />
+    <Content Include="Content\images\search-bg.png" />
+    <Content Include="Content\images\search-go.png" />
+    <Content Include="Content\images\side-bg-ie6.png" />
+    <Content Include="Content\images\side-bg.png" />
+    <Content Include="Content\images\side-box-bg.png" />
+    <Content Include="Content\images\side-box-top.png" />
+    <Content Include="Content\images\side-nav-bg.png" />
+    <Content Include="Content\images\side-nav-rss.gif" />
+    <Content Include="Content\images\side-start-ie6.png" />
+    <Content Include="Content\images\side-start.png" />
+    <Content Include="Content\images\tab-left.png" />
+    <Content Include="Content\images\tab-right.png" />
+    <Content Include="Content\images\tab-subnav-active.gif" />
+    <Content Include="Content\images\tab-subnav.png" />
+    <Content Include="Content\images\thumb-down.gif" />
+    <Content Include="Content\images\thumb-up.gif" />
+    <Content Include="Content\images\vote-text.png" />
+    <Content Include="Content\images\vote-up.png" />
+    <Content Include="Views\Log\BuyerOrders.aspx" />
+    <Content Include="Views\Log\CreateDemand.aspx" />
+    <Content Include="Views\Log\CreateOrder.aspx" />
+    <Content Include="Views\Log\Deactivate.aspx" />
+    <Content Include="Views\Buyer\Deactivated.aspx" />
+    <Content Include="Views\Buyer\Meeting.aspx" />
+    <Content Include="Views\Buyer\MeetingDetails.aspx" />
+    <Content Include="Views\Home\Error.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Home\NotFound.aspx" />
+    <Content Include="Views\Log\Buyer.aspx" />
+    <Content Include="Views\Log\EditBuyer.aspx" />
+    <Content Include="Views\Log\LogOn.aspx" />
+    <Content Include="Views\Log\Merch.aspx" />
+    <Content Include="Views\Log\OrderDetails.aspx" />
+    <Content Include="Views\Merch\BuyerDetails.aspx" />
+    <Content Include="Views\Merch\BuyerList.aspx" />
+    <Content Include="Views\Merch\Dying.aspx" />
+    <Content Include="Views\Merch\Knitting.aspx" />
+    <Content Include="Views\Merch\Order.aspx" />
+    <Content Include="Views\Merch\OrderDetails.aspx" />
+    <Content Include="Views\Merch\Yarn.aspx" />
+    <Content Include="Views\Registration\Confermation.aspx" />
+    <Content Include="Views\Registration\Index.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\TestDemand\Demand.aspx" />
+    <Content Include="Views\TestDemand\DemandDetails.aspx" />
+    <Content Include="Views\TestDemand\EditDemand.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Master.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\TextileManagementSystem.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TextileManagementSystem.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>29968</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
