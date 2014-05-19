@@ -15,18 +15,21 @@ namespace TextileManagementSystem.Controllers
         //
         // GET: /Buyer/
 
-        public ActionResult Meeting()
+        
+        public ActionResult Meeting()// with meeting people
         {
             var m = meetingRepository.FindUpcomingMeetings().ToList();
             return View("Meeting", m);
         }
 
+       
         public ActionResult MeetingDetails(int id)
         {
             Meeting m = meetingRepository.GetMeeting(id);
             return View("MeetingDetails", m);
         }
 
+      
         public ActionResult Deactivated()
         {
             return View();
